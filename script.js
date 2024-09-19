@@ -1,24 +1,49 @@
+function executar1008(){
+    let id, horas, valorhora, salario
+    id = Number(prompt("Digite seu id: "))
+    horas = Number(prompt("Quantas horas você trabalhou?"))
+    valorhora = Number(prompt("Quanto você ganha por hora?"))
+    
+    salario = horas * valorhora
 
-function calcularIMC(){
-    let peso = document.getElementById("inpPeso").value
-    let altura = document.getElementById("inpAltura").value
-
-    let imc = peso / (altura**2)
-
-    //document.getElementById("inpResultado").value = "seu IMC é : " +imc
-
-    document.getElementById("pResultado").innerHTML = "seu IMC é : " +imc.toFixed(2)
-    //alert("O IMC é : " +imc)
-    //console.log(peso)
+    alert("ID: "+id +"\nSalário: R$" +salario.toFixed(2))
 }
 
-function idadeCao(){
-    let idade = document.getElementById("idadeD").value
-    let age = idade * 7
-    if(age < 64){
-        document.getElementById("pIdade").innerHTML = "Seu cachorro ainda é JOVEM pois tem : " +age +" anos humanos"
+function exe1009(){
+   let id, salario, vendas, total//, lucro
+   id = prompt("Nome: ")
+   salario = Number(prompt("Salário fixo: "))
+   vendas = Number(prompt("Vendas efetuadas do mês: "))
+
+   //lucro = vendas * 15/100
+   total = salario + (vendas * 15/100)
+
+   alert(id +" recebeu R$ "+total.toFixed(2) +" este mês.")
+}
+
+function exe1038(){
+    let codigo, qtd, preco, total
+    codigo = Number(prompt("Selecione um código\n 1 - cachorro-quente\n 2 - X-salada\n 3 - X- bacon\n 4 - Torrada simples\n 5 - Refrigerante"))
+    qtd = Number(prompt("Quantidade desejada: "))
+    if(codigo == 1){
+        preco = 4 * qtd
+        //alert("Valor Total: R$"+preco)
     }
-    else{
-        document.getElementById("pIdade").innerHTML = "Seu cachorro ainda é IDOSO pois tem : " +age +" anos Humanos"
+    else if(codigo ==2){
+        preco = 4.50 * qtd
+        //alert("Valor Total: R$"+preco)
     }
+    else if(codigo ==3){
+        preco = 5 * qtd
+        //alert("Valor Total: R$"+preco)
+    }
+    else if(codigo ==4){
+        preco = 2 * qtd
+        //alert("Valor Total: R$"+preco)
+    }
+    else if(codigo ==5){
+        preco = 1.50 * qtd
+        //alert("Valor Total: R$"+preco)
+    }
+    alert("Valor Total: R$"+preco.toFixed(2))
 }
