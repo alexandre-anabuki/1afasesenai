@@ -104,3 +104,37 @@ function exe1115(){
         //let y = Number(prompt("Digite um coordenada Y: "))
     }
 }
+
+function exe1142(){
+    let cont = 1
+    let contPUM = 0
+    let limitePUM = Number(prompt("Digite um número"))
+    let acumulador = ""
+    while(contPUM < limitePUM){
+        if(cont % 4 != 0){
+            console.log(cont)
+            acumulador += cont + " "
+        }
+        else{
+            console.log("PUM")
+            contPUM++
+            acumulador += "PUM\n"
+        }
+        cont++
+    }
+    alert(acumulador)
+    /* -------------------------------------------------*/
+    /*let x = Number(prompt("Digite um número para quantidade de linhas:"))
+    let r = ""
+    for(let n = 1; n <=x; n++){
+        if(n % 4 != 0){
+            r += n
+        }
+        else{
+            r += "PUM"
+        }
+        //r += (n)+", "+(n+1)+", "+(n+2)+", "+"PUM\n"
+        r = r+", "+r+", "+r+", "+r+"\n"
+    }
+    alert(r)*/
+}
