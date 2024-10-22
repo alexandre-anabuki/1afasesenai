@@ -1,0 +1,70 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container{
+    border-style: double;
+    width: 70vw;
+    /*text-align: center;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    background-color: antiquewhite;
+}
+
+.register{
+    text-align: center;
+    border-style: groove;
+    width: 45vw;
+    border-radius: 15px;
+    background-color: rgba(208, 255, 0, 0.575);
+}
+
+.login{
+    text-align: center;
+    border-style: groove;
+    width: 45vw;
+    border-radius: 15px;
+    background-color: rgba(208, 255, 0, 0.575);
+}
+
+.crud{
+    text-align: center;
+    border-style: groove;
+    width: 45vw;
+    border-radius: 15px;
+    background-color: rgba(152, 138, 230, 0.575);
+}
+
+#adiciona{
+    width: 100%;
+    background-color: chartreuse;
+    border-radius: 15px;
+}
+
+#logar{
+    width: 200px;
+    background-color: aquamarine;
+    border-radius: 15px;
+}
+
+#edit{
+    width: 200px;
+    background-color: rgb(127, 219, 255);
+    border-radius: 15px;
+}
+
+#delete{
+    width: 200px;
+    background-color: rgb(233, 60, 60);
+    border-radius: 15px;
+}
+
+input{
+    width: 200px;
+    height: 20px;
+    border-radius: 15px;
+}
