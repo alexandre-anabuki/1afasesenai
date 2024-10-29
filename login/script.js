@@ -1,45 +1,60 @@
 let bancoDeDados = []
 function add(){
-    let usuario = document.getElementById("username").value
+    let usuario = {
+        username:document.getElementById("username").value.toUpperCase(),
+        password:document.getElementById("senha").value
+    }
+    //let usuario = document.getElementById("username").value
     //let pos = bancoDeDados.indexOf(usuario.toUpperCase())
-    if(existe(username) == false){
-        bancoDeDados.push(usuario.toUpperCase())
+    if(existe(usuario.username) == false){
+        bancoDeDados.push(usuario)
         alert("Usuário Cadastrado com Sucesso!")
         document.getElementById("username").value = null
+        document.getElementById("senha").value = null
     }
     else{
-        alert("Usuário Já Está Cadastrado!")
+        alert("Usuário já Possui Cadastrado!")
     }
 }
 function login(){
-    let usuario = document.getElementById("user").value
+    let usuario = document.getElementById("user").value.toUpperCase()
+    let senha = document.getElementById("pass").value
     //let pos = bancoDeDados.indexOf(usuario.toUpperCase())
-    if(existe(usuario) == false){
-        alert("Usuário não cadastrado")
+    if(autentica(usuario, senha) == false){
+        alert("Falha de autentificação!")
     }
     else{
         alert("Bem-vindo")
     }
     document.getElementById("user").value = null
+    document.getElementById("pass").value = null
 }
 
 function remove(){
-    let usuario = document.getElementById("userDelete").value
-    //let pos = bancoDeDados.indexOf(usuario.toUpperCase())
+    let username = document.getElementById("userDelete").value.toUpperCase()
+    let pos = indexOfbyJack(username)
+    if(pos != -1){
+        bancoDeDados.splice(pos, 1)
+        alert("Usuário: " +username +" foi Removido!")
+    }
+    else{
+        alert("Sem Registro de Usuário!")
+    }
+    //let pos = bancoDeDados.indexOf(username.toUpperCase())
     /*for(let cad of bancoDeDados){
         if(cad.toUpperCase() == usuario.toUpperCase()){
             pos = bancoDeDados.indexOf(cad)
             break
         }
     }*/
-    if(existe(usuario) == false){
+    /*if(pos == -1){
         alert("Sem Registro de Usuário!")
     }
     else{
         bancoDeDados.splice(pos, 1)
         alert("Usuário " +usuario +" foi Removido!")
     }
-    document.getElementById("userDelete").value = null
+    document.getElementById("userDelete").value = null*/
 }
 
 function edit(){
@@ -91,11 +106,35 @@ function edit(){
 }
 
 function existe(username){
-    let pos = bancoDeDados.indexOf(username.toUpperCase())
+    for(let usuario of bancoDeDados){
+        if(usuario.username == username){
+            return true
+        }
+    }
+    return false
+    /*let pos = bancoDeDados.indexOf(username.toUpperCase())
     if(pos == -1){
         return false
     }
     else{
         return true
+    }*/
+}
+
+function autentica(username, password){
+    for(let usuario of bancoDeDados){
+        if(usuario.username == username && usuario.password == password){
+            return true
+        }
     }
+    return false
+}
+
+function indexOfbyJack(username){
+    for(let usuario of bancoDeDados){
+        if(usuario.username == username){
+            return bancoDeDados.indexOf(usuario)
+        }
+    }
+    return -1
 }
