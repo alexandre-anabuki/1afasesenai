@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Biblioteca</h1>
+        <div class="bib">
+            <h3>Cadastro</h3>
+            <label for="cadTitulo">Titulo:</label>
+            <input type="text" id="cadTitulo" placeholder="Ex: The Watchmen"><br>
+            <label for="cadAutor">Autor:</label>
+            <input type="text" id="cadAutor" placeholder="Ex: Fulano"><br>
+            <label for="cadGeN">Gênero:</label>
+            <input type="text" id="cadGen" placeholder="Ex: Ação"><br>
+            <label for="cadEditora">Editora:</label>
+            <input type="text" id="cadEditora" placeholder="Ex: Ciclano"><br>
+            <label for="cadISBN">ISBN:</label>
+            <input type="text" id="cadISBN" placeholder="Ex: 1234567890"><br>
+            <button onclick="add()"> Cadastrar Livro</button>
+        </div>
+        <div class="bib">
+            <h3>Listagem de Livros</h3>
+            <p id="acervo"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
