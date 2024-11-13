@@ -1,0 +1,43 @@
+body{
+    text-align: center;
+    background-color: rgb(17, 93, 160);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section{
+    border-radius: 15px;
+    border-style: groove;
+    background-color: rgb(16, 110, 192);
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+input{
+    width: 75%;
+    border-radius: 15px;
+    height: 5vh;
+}
+
+button{
+    width: 75%;
+    background-color: rgb(7, 214, 52);
+    border-radius: 15px;
+    height: 5vh;
+}
+
+button:hover{
+    background-color: rgb(5, 114, 28);
+}
+
+.section:hover{
+    background-color: rgb(39, 146, 240);
+}
+
+h1{
+    font-family: sans-serif;
+    color: bisque;
+}
