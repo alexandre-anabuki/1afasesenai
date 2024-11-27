@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto SESISENAI 1°Fase</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div>
         <h1>Almoxarifado</h1>
         <button onclick="mostrarcad()">Cadastro</button>
         <button onclick="mostraremp()">Empréstimo</button>
         <button onclick="mostrardev()">Devolução</button>
-        <button onclick="mostrarlis()">Lista</button>
+        <!-- <button onclick="mostrarlis()">Lista</button> -->
     </div>
 
     <div id="cadModal" class="modal">
         <div class="modalRegistro">
-            <span class="close">&times;</span>
-            <label for="tool">Ferramenta</label>
-            <input type="text" id="tool" name="tool" required><br>
-            <label for="quantidade">Quantidade</label>
-            <input type="number" id="quantidade" name="quantidade" required><br>
-            <button type="submit">Cadastrar</button>
+            <form id="cadForm">
+                <h2>Cadastro</h2>
+                <span class="close">&times;</span>
+                <label for="tool">Ferramenta</label>
+                <input type="text" id="tool" name="tool" required><br>
+                <label for="quantidade">Quantidade</label>
+                <input type="number" id="quantidade" name="quantidade" required><br>
+                <button id="comfirmaCad" type="submit">Cadastrar</button>
+            </form>
         </div>
     </div>
     <div id="empModal" class="modal">
@@ -49,7 +54,7 @@
             <button type="submit">Registrar</button>
         </div>
     </div>
-    <div id="lisModal" class="modal">
+    <!-- <div id="lisModal" class="modal">
         <div class="modalRegistro">
             <h2>lista</h2>
             <span class="close">&times;</span>
@@ -59,8 +64,31 @@
             <input type="number" id="quantidade" name="quantidade" required>
             <button type="submit">Mostrar</button>
         </div>
+    </div> -->
+    <table id="listageral">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Ferramenta</th>
+                <th>Quantidade</th>
+                <th>Empréstimo</th>
+                <th>Remover</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <div id="modalExcluir" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Deseja realmente excluir este registro?</p>
+            <button id="confirmarExcluir">Excluir</button>
+            <button id="cancelarExcluir">Cancelar</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>
