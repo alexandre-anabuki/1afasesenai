@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-    let confirmacad = document.getElementById("confirmaCad")
+    //let modal = document.getElementById("cadModal")
+    //let confirmacad = document.getElementById("cofirmaCad")
     const form = document.getElementById('cadForm')
     form.addEventListener('submit', function (event) {
         event.preventDefault()
@@ -16,10 +17,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
         localStorage.setItem('itens', JSON.stringify(itens))
         modal.style.display = "block"
         form.reset()
-        confirmacad.onclick = function () {
-
-        }
     })
+    // confirmacad.onclick = function () {
+    //     modal.style.display = "none";
+    //     carregarTabela();
+    // }
     /*function carregarTabela() {
         let itens = JSON.parse(localStorage.getItem('itens')) || []
         // Função para carregar e exibir os dados da tabela

@@ -22,36 +22,41 @@
             <form id="cadForm">
                 <h2>Cadastro</h2>
                 <span class="close">&times;</span>
-                <label for="tool">Ferramenta</label>
-                <input type="text" id="tool" name="tool" required><br>
-                <label for="quantidade">Quantidade</label>
-                <input type="number" id="quantidade" name="quantidade" required><br>
-                <button id="comfirmaCad" type="submit">Cadastrar</button>
+                <label for="item">Ferramenta</label>
+                <input type="text" id="item" name="item" required><br>
+                <label for="qtd">Quantidade</label>
+                <input type="number" id="qtd" name="qtd" required><br>
+                <!-- <button id="confirmaCad" type="submit">Cadastrar</button> -->
+                <button onclick="cadastrar()" type="submit">Cadastrar</button>
             </form>
         </div>
     </div>
     <div id="empModal" class="modal">
         <div class="modalRegistro">
-            <h2>EMPRÉSTIMO</h2>
-            <span class="close">&times;</span>
-            <label for="tool">Ferramenta</label>
-            <input type="text" id="tool" name="tool" required>
-            <label for="saida">Saída</label>
-            <input type="number" id="saida" name="saida" required>
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" required>
-            <button type="submit">Registrar</button>
+            <form id="retiradaForm">
+                <h2>Empréstimo</h2>
+                <span class="close">&times;</span>
+                <label for="item">Ferramenta</label>
+                <input type="text" id="item2" name="item2" required>
+                <label for="qtd">Saída</label>
+                <input type="number" id="qtd2" name="qtd2" required>
+                <!-- <button type="submit">Registrar</button> -->
+                <input onclick="retirada()" type="button" value="Retirada" />
+            </form>
         </div>
     </div>
     <div id="devModal" class="modal">
         <div class="modalRegistro">
-            <h2>devolução</h2>
-            <span class="close">&times;</span>
-            <label for="tool">Ferramenta</label>
-            <input type="text" id="tool" name="tool" required>
-            <label for="quantidade">Quantidade</label>
-            <input type="number" id="quantidade" name="quantidade" required>
-            <button type="submit">Registrar</button>
+            <form id="devolverForm">
+                <h2>Devolução</h2>
+                <span class="close">&times;</span>
+                <label for="item2">Ferramenta</label>
+                <input type="text" id="item3" name="item3" required>
+                <label for="qtd2">Entrada</label>
+                <input type="number" id="qtd3" name="qtd3" required>
+                <!-- <button type="submit">Registrar</button> -->
+                <button onclick="devolver()" type="button" value="Devolver">Devolver</button>
+            </form>
         </div>
     </div>
     <!-- <div id="lisModal" class="modal">
@@ -68,8 +73,7 @@
     <table id="listageral">
         <thead>
             <tr>
-                <th>Nome</th>
-                <th>Ferramenta</th>
+                <th>Item</th>
                 <th>Quantidade</th>
                 <th>Empréstimo</th>
                 <th>Remover</th>
@@ -88,7 +92,7 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="almoxarife.js"></script>
 </body>
 
 </html>
