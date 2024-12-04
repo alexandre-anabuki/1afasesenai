@@ -9,12 +9,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     console.log('Documento carregado e pronto.');
     const form = document.getElementById('cadForm');
     form.addEventListener('submit', function(event) {
-    
+        let modal = document.getElementById("cadModal");
         event.preventDefault();
         const item = document.getElementById('item').value;
         const quantidade = document.getElementById('qtd').value;
         let listaAtual = JSON.parse(localStorage.getItem('listaAtual')) || [];
-        // const senha = document.getElementById('senha').value;
         // Gerar um ID único para o novo usuário
         // Se houver usuários cadastrados, define o ID como o próximo na sequência. Caso contrário, define o ID como 1.
         let id = listaAtual.length ? listaAtual[listaAtual.length - 1].id + 1 : 1; //nota: "?" = if , ":" = else
@@ -40,19 +39,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
         
         listaAtual.push(usuario);
-        localStorage.setItem('listaAtual', JSON.stringify(listaAtual));
+        localStorage.setItem('listaAtual', JSON.stringify(listaAtual));      
         
         
         
-        
-        modal.style.display = "block";
+        modal.style.display = "none";
         form.reset();
+        carregarTabela();
     });
 });
 
 
 
 function retirada() { 
+    let modal = document.getElementById("empModal");
     let listaAtual = JSON.parse(localStorage.getItem('listaAtual')) || []; 
     let novaLista = listaAtual 
     console.log('ESTOU AQUI', itemPedido.value) 
@@ -77,10 +77,12 @@ function retirada() {
     console.log("listaAtual", novaLista)
 
         localStorage.setItem('listaAtual', JSON.stringify(novaLista));
-        
+        modal.style.display = "none";
+        carregarTabela();     
 }
 
 function devolver(){
+    let modal = document.getElementById("devModal");
     let listaAtual = JSON.parse(localStorage.getItem('listaAtual')) || [];
     let novaLista= listaAtual
     console.log('ESTOU AQUI',itemDevolvido.value )
@@ -102,27 +104,13 @@ function devolver(){
     console.log("listaAtual", novaLista)
 
     localStorage.setItem('listaAtual', JSON.stringify(novaLista));
-}
-
-// Obtém o modal
-
-// Obtém o elemento <span> que fecha o modal
-//let span = document.getElementsByClassName("close")[0];
-
-// Quando o usuário clicar no <span> (x), fecha o modal
-/*span.onclick = function() {
     modal.style.display = "none";
-}*/
-// Quando o usuário clicar em qualquer lugar fora do modal, fecha o modal
-/*window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}*/
+    carregarTabela();
+}
 
 /*-----------------------------------------------------------------------------------------------*/
 
-document.addEventListener('DOMContentLoaded', (event) => {
+//document.addEventListener('DOMContentLoaded', (event) => {
     // Esta função é executada quando o documento HTML é completamente carregado
     function carregarTabela() {
         // Função para carregar e exibir os dados da tabela
@@ -161,18 +149,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
     //let span = document.getElementsByClassName("close")[0];
     let confirmarExcluir = document.getElementById("confirmarExcluir");
     let cancelarExcluir = document.getElementById("cancelarExcluir");
-    let usuarioItemElemento = document.getElementById("usuarioItem");
+    //let usuarioItemElemento = document.getElementById("usuarioItem");
     let usuarioParaExcluirId = '';
     // Função para exibir o modal de confirmação
     function mostrarModal(itemUsuario, idUsuario) {
         usuarioParaExcluirId = idUsuario;
-        usuarioItemElemento.textContent = itemUsuario;
+        //usuarioItemElemento.textContent = itemUsuario;
         modal.style.display = "block";
     }
     // Ouvinte de evento para fechar o modal quando clicar no 'x'
-    span.onclick = function() {
+    /*span.onclick = function() {
         modal.style.display = "none";
-    }
+    }*/
     // Ouvinte de evento para fechar o modal ao clicar no botão Cancelar
     cancelarExcluir.onclick = function() {
         modal.style.display = "none";
@@ -199,7 +187,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             modal.style.display = "none";
         }
     }
-});
+//});
 
 /*-----------------------------------------------------------------------------------------------*/
 
@@ -261,3 +249,5 @@ function mostrarlis() {
     esconder()
     document.getElementById("lisModal").style.display = "block"
 }
+
+//------------------------------------------------------------------------------------------
