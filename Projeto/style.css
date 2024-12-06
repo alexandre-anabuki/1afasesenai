@@ -21,10 +21,19 @@
 
 /* Estilo para o conteúdo do modal */
 .modalRegistro {
+    text-align: center;
+    border-radius: 10px;
+    /*padding: 5px;*/
+    border-style: double;
+    /*width: 25%;*/
     background-color: #fefefe; /* Cor de fundo do conteúdo */
     margin: 15% auto; /* Margem para centralizar o modal */
     padding: 20px; /* Espaçamento interno */
-    width: 80%; /* Largura do conteúdo do modal */
+    width: 28%; /* Largura do conteúdo do modal */
+    /*display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;*/
 }
 /* Estilo para o botão de fechar */
 .close {
@@ -32,11 +41,12 @@
     float: right; /* Alinha à direita */
     font-size: 28px; /* Tamanho da fonte */
     font-weight: bold; /* Negrito */
+
 }
 /* Estilo para o botão de fechar quando o mouse estiver sobre ele */
 .close:hover,
 .close:focus {
-    color: black; /* Cor preta */
+    color: red; /* Cor preta */
     text-decoration: none; /* Remove sublinhado */
     cursor: pointer; /* Altera o cursor para pointer */
 }
@@ -56,4 +66,12 @@ th, td {
 th {
     background-color: #f2f2f2; /* Cor de fundo */
     color: black; /* Cor do texto */
+}
+
+label{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
 }
