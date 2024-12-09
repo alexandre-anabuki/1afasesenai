@@ -58,9 +58,9 @@ table {
 }
 /* Estilização para as células da tabela */
 th, td {
-    border: 1px solid #ddd; /* Define borda */
-    padding: 8px; /* Espaçamento interno */
-    text-align: left; /* Alinhamento do texto */
+    border: 1px solid #ddd; 
+    padding: 8px;
+    text-align: left;
 }
 /* Estilização para o cabeçalho da tabela */
 th {
@@ -74,4 +74,42 @@ label{
     justify-content: center;
     align-items: center;
     font-weight: bold;
+}
+
+body {
+    background-image: url('https://static.vecteezy.com/system/resources/previews/005/182/637/non_2x/blue-abstract-background-with-modern-style-wave-background-illustration-vector.jpg');
+    background-repeat: no-repeat;
+}
+
+tbody{
+    background-color: #fefefe;
+}
+
+/*------------------------------------------------------------------------------------------------------------*/
+
+#cabeça{
+    text-align: center;
+}
+
+#reg{
+    width: 8%;
+    border-style: groove;
+    border-radius: 5px;
+    height: 5vh;
+    margin: 20px;
+    font-size: medium;
+}
+.excluirBtn{
+    width: fit-content;
+    border-style: double;
+    border-radius: 3px;
+    height: 3vh;
+    margin: 2px;
+}
+.excluirBtn:hover{
+    background-color: rgba(255, 0, 0, 0.808);
+}
+
+#reg:hover{
+    background-color: rgba(14, 168, 8, 0.61)
 }
